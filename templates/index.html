@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog Idea Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>AI Blog Idea Generator</h1>
+    <p>Welcome to the AI Blog Idea Generator - The cure for anyone´s writer´s block! Enter a topic, and I will generate 3 SEO-optimized blog post ideas with descriptions. Perfect for content creators, marketers, and entrepreneurs.</p>
+    
+    <form action="/" method="POST">
+        <label for="topic">Enter a topic:</label>
+        <input type="text" id="topic" name="topic" required>
+        <button type="submit">Generate Ideas</button>
+    </form>
+
+    {% if ideas %}
+        <h2>Blog Ideas for "{{ topic }}"</h2>
+        <div class="output-box">
+            {% for line in ideas.split("\n") %}
+                <p>{{ line }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
