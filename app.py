@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+
 api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=api_key)
 
@@ -23,10 +24,11 @@ def index():
         )
 
         ai_content = response.choices[0].message.content
-        ai_content = ai_content.replace("1.", "<div class='idea-card'><strong>1.</strong>")\
-                               .replace("2.", "</div><div class='idea-card'><strong>2.</strong>")\
-                               .replace("3.", "</div><div class='idea-card'><strong>3.</strong>") + "</div>"
-        ai_content = ai_content.replace("\n", "<br>")
+
+        ai_content = ai_content.replace("1.", "<div class='idea-card'><strong>1.</strong> <strong>")\
+                               .replace("2.", "</strong></div><div class='idea-card'><strong>2.</strong> <strong>")\
+                               .replace("3.", "</strong></div><div class='idea-card'><strong>3.</strong> <strong>")\
+                               .replace('"\n', '</strong><p>') + "</p></div>"
 
         return render_template("index.html", topic=user_topic, ideas=ai_content)
 

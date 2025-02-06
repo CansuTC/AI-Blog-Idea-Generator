@@ -59,6 +59,20 @@ button:hover {
     transform: translateY(-3px);
 }
 
+.idea-card strong {
+    font-size: 18px; 
+    font-weight: bold; 
+    display: block; 
+    margin-bottom: 5px; 
+    color: #333;
+}
+
+.idea-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
 #loading {
     font-weight: bold;
     color: #555;
