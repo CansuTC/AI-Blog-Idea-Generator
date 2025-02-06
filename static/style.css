@@ -1,11 +1,13 @@
+/* Minimalist Warm Beige Theme */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #f5f1e9;
+    background-color: #f5f1e9; /* Soft beige */
     color: #333;
     text-align: center;
     padding: 20px;
 }
 
+/* Page Title */
 h1 {
     font-size: 28px;
     font-weight: 600;
@@ -13,15 +15,17 @@ h1 {
     letter-spacing: 0.5px;
 }
 
+/* Main Content Container */
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     padding: 25px;
-    background: white;
+    background: #f5f1e9;
     border-radius: 12px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Input Box */
 input[type="text"] {
     width: 60%;
     padding: 10px;
@@ -31,6 +35,7 @@ input[type="text"] {
     outline: none;
 }
 
+/* Button */
 button {
     padding: 10px 15px;
     font-size: 16px;
@@ -46,9 +51,10 @@ button:hover {
     background-color: #b28e6a;
 }
 
+/* AI-Generated Content Cards */
 .idea-card {
     background: white;
-    padding: 15px;
+    padding: 20px;
     margin: 15px 0;
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
@@ -59,20 +65,24 @@ button:hover {
     transform: translateY(-3px);
 }
 
-.idea-card strong {
-    font-size: 18px; 
-    font-weight: bold; 
-    display: block; 
-    margin-bottom: 5px; 
-    color: #333;
+/* Make Headlines Larger & Bold */
+.idea-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
 }
 
+/* Make Explanations Regular (Not Bold) */
 .idea-card p {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
     line-height: 1.5;
+    margin-top: 5px;
 }
 
+/* Loading Animation */
 #loading {
     font-weight: bold;
     color: #555;
@@ -80,11 +90,8 @@ button:hover {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Smooth Fade-in Animation */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
