@@ -1,16 +1,8 @@
-# Ignore environment variables and secrets
 .env
-
-# Ignore Python cache files
+.venv/
 __pycache__/
 *.pyc
 *.pyo
-
-# Ignore log files
 *.log
-
-# Ignore OS-specific files
 .DS_Store
-
-# Ignore VS Code settings
 .vscode/

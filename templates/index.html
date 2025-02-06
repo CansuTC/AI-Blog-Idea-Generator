@@ -18,7 +18,10 @@
 
     {% if ideas %}
         <h2>Blog Ideas for "{{ topic }}"</h2>
-        <div class="output-box">
+        <div id="loading" style="display: none;">
+            <p>🤖 Generating ideas... Please wait!</p>
+        </div>
+        <div id="ai-output" class="container"></div>
             {% for line in ideas.split("\n") %}
                 <p>{{ line }}</p>
             {% endfor %}
