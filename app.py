@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, send_from_directory
 import openai
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
-
 api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=api_key)
 
@@ -21,6 +23,11 @@ def index():
         )
 
         ai_content = response.choices[0].message.content
+        ai_content = ai_content.replace("1.", "<div class='idea-card'><strong>1.</strong>")\
+                               .replace("2.", "</div><div class='idea-card'><strong>2.</strong>")\
+                               .replace("3.", "</div><div class='idea-card'><strong>3.</strong>") + "</div>"
+        ai_content = ai_content.replace("\n", "<br>")
+
         return render_template("index.html", topic=user_topic, ideas=ai_content)
 
     return render_template("index.html", topic=None, ideas=None)
@@ -30,4 +37,4 @@ def favicon():
     return send_from_directory("static", "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port=5000)

@@ -1,3 +1,3 @@
-document.getElementById("blog-form").onsubmit = function () {
+function showLoading() {
     document.getElementById("loading").style.display = "block";
-};
+}
