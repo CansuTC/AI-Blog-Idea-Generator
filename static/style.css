@@ -23,7 +23,11 @@ h1 {
     color: #5A3E36;
     margin-top: 15px;
 }
-
+/* Normal text inside the sub-header (for non-bold parts) */
+.normal-text {
+    font-weight: normal;
+    color: #2E1E1E; /* Ensures it stays the same color as the rest */
+}
 /* Main Container */
 .container {
     max-width: 700px;
@@ -138,6 +142,36 @@ button:hover {
     color: #555;
     margin-top: 15px;
     animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Bottom Form - Same Styling as Top */
+.bottom-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bottom-form input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #C6A984;
+    border-radius: 8px;
+    outline: none;
+}
+
+.bottom-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #8B5E3C; /* Same warm brown */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bottom-form button:hover {
+    background-color: #6A422A;
 }
 
 /* Fade-in Animation */
