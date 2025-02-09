@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Blog Idea Generator</title>
+    <title>Wordy Wanda – AI Idea Generator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>AI Blog Idea Generator</h1>
-    <p>Welcome to the AI Blog Idea Generator - The cure for writer’s block! Enter a topic, and I will generate 3 SEO-optimized blog post ideas with descriptions. Perfect for content creators, marketers, and entrepreneurs.</p>
-    
+    <h1>Wordy Wanda</h1>
+    <p class="sub-header">Oh honey, hitting a creative wall? Not on my watch!<br>
+    I’m Wordy Wanda, and I eat writer’s block for breakfast ✨<br>
+    Drop me a topic, and I’ll serve you up some fresh, snappy ideas faster than you can say ‘content goldmine’.<br>
+    I´ll also add in the top 10 keywords for your search.</p>
+
     <form action="/" method="POST">
         <label for="topic">Enter a topic:</label>
         <input type="text" id="topic" name="topic" required>
         <button type="submit">Generate Ideas</button>
     </form>
 
-    <div id="loading" style="display: none;">
-        <p>🤖 Generating ideas... Please wait!</p>
-    </div>
-
     {% if ideas %}
-        <h2>Blog Ideas for "{{ topic }}"</h2>
-        <div id="ai-output" class="container">
+        <p class="pre-ideas">Alright, sugar, I put my brain cells to work and spun up some gold for you. Here’s what I got:</p>
+
+        <div class="container">
             {{ ideas | safe }}
+        
+            {% if keywords %}
+            <div class="seo-box">
+                <h4>🔎 Top SEO Keywords</h4>
+                <p>{{ keywords }}</p>
+            </div>
+            {% endif %}
         </div>
+
+        <p class="outro">Boom. There you go! 💥 Now take these beauties and work your magic.<br>
+        Need more? Just type another topic and let’s keep this creative train rolling! choo-chooo🚂</p>
     {% endif %}
 </body>
 </html>
