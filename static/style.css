@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #FAF8F6; /* Editorial Soft Beige */
+    background-color: #FAF8F6; 
     color: #2E1E1E;
     text-align: center;
     padding: 20px;
@@ -15,7 +15,7 @@ h1 {
     letter-spacing: 0.5px;
 }
 
-/* Sub-header (Aligned with Editorial Look) */
+/* Sub-header */
 .sub-header {
     font-family: "Merriweather", serif;
     font-size: 23px;
@@ -23,15 +23,16 @@ h1 {
     color: #5A3E36;
     margin-top: 15px;
 }
-/* Normal text inside the sub-header (for non-bold parts) */
+/* Normal text inside the sub-header */
 .normal-text {
     font-weight: normal;
-    color: #2E1E1E; /* Ensures it stays the same color as the rest */
+    color: #2E1E1E;
 }
 /* Main Container */
 .container {
     max-width: 700px;
-    margin: auto;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* Input Field */
@@ -48,7 +49,7 @@ input[type="text"] {
 button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #8B5E3C; /* Rich Warm Brown */
+    background-color: #8B5E3C;
     color: white;
     border: none;
     border-radius: 8px;
@@ -60,7 +61,6 @@ button:hover {
     background-color: #6A422A;
 }
 
-/* AI-Generated Idea Cards */
 .idea-card {
     background: white;
     padding: 15px;
@@ -69,14 +69,13 @@ button:hover {
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease-in-out;
     max-width: 700px;
-    width: 100%;
+    width: 90%;
 }
 
 .idea-card:hover {
     transform: translateY(-3px);
 }
 
-/* Blog Idea Headlines */
 .idea-card h3 {
     font-size: 23px;
     font-weight: bold;
@@ -84,7 +83,6 @@ button:hover {
     margin-bottom: 7px;
 }
 
-/* Blog Idea Explanations */
 .idea-card p {
     font-size: 16px;
     font-weight: normal;
@@ -93,7 +91,6 @@ button:hover {
     margin-top: 7px;
 }
 
-/* Pre-Ideas & Outro Message */
 .pre-ideas, .outro {
     font-family: "Merriweather", serif;
     font-size: 23px;
@@ -102,7 +99,6 @@ button:hover {
     margin-top: 30px;
 }
 
-/* SEO Keyword Box */
 .seo-box {
     background: #FCF5E5;
     padding: 15px;
@@ -110,12 +106,8 @@ button:hover {
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
     max-width: 700px; 
-    width: 100%;
+    width: 90%;
     text-align: center;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
 }
 
 /* SEO Keyword Title */
@@ -136,7 +128,6 @@ button:hover {
     margin-top: 7px;
 }
 
-/* Loading Animation */
 #loading {
     font-weight: bold;
     color: #555;
@@ -144,7 +135,6 @@ button:hover {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Bottom Form - Same Styling as Top */
 .bottom-form {
     margin-top: 20px;
     text-align: center;
@@ -172,6 +162,14 @@ button:hover {
 
 .bottom-form button:hover {
     background-color: #6A422A;
+}
+/* Mobile Optimization */
+@media screen and (max-width: 768px) {
+    .idea-card,
+    .seo-box {
+        width: 95%;
+        padding: 12px;
+    }
 }
 
 /* Fade-in Animation */
